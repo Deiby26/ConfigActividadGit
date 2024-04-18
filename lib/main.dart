@@ -5,7 +5,7 @@ void main() {
 }
 
 class MainApp extends StatefulWidget {
-  const MainApp({super.key});
+  const MainApp({Key? key}) : super(key: key);
 
   @override
   State<MainApp> createState() => _MainAppState();
@@ -21,13 +21,15 @@ class _MainAppState extends State<MainApp> {
           title: const Text(
             "Facebook",
             style: TextStyle(
-                fontFamily: 'Arial',
-                fontWeight: FontWeight.bold,
-                color: Colors.white),
+              fontFamily: 'Arial',
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
           ),
-          backgroundColor: Colors.blue,
+          backgroundColor: const Color.fromARGB(255, 0, 64, 116),
         ),
-        body: Center(
+        body: Container(
+          color: const Color.fromARGB(255, 182, 180, 180),
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -36,10 +38,12 @@ class _MainAppState extends State<MainApp> {
                   height: 150,
                   width: 150,
                   child: const Image(
-                      image: NetworkImage(
-                          'https://upload.wikimedia.org/wikipedia/commons/c/cd/Facebook_logo_%28square%29.png')),
+                    image: NetworkImage(
+                      'https://upload.wikimedia.org/wikipedia/commons/c/cd/Facebook_logo_%28square%29.png',
+                    ),
+                  ),
                 ),
-                const Text(" "),
+                const SizedBox(height: 20),
                 Form(
                   child: Column(
                     children: [
@@ -49,35 +53,53 @@ class _MainAppState extends State<MainApp> {
                           decoration: const InputDecoration(
                             labelText: 'Nombre',
                             border: OutlineInputBorder(),
+                            filled: true,
+                            fillColor: Color.fromARGB(255, 235, 227, 227),
                           ),
                         ),
                       ),
-                      const Text(""),
+                      const SizedBox(height: 20),
                       SizedBox(
                         width: 400,
                         child: TextFormField(
                           decoration: const InputDecoration(
-                              labelText: 'Correo Electronico',
-                              border: OutlineInputBorder()),
+                            labelText: 'Correo Electronico',
+                            border: OutlineInputBorder(),
+                            filled: true,
+                            fillColor: Color.fromARGB(255, 235, 227, 227),
+                          ),
                         ),
                       ),
-                      const Text(""),
+                      const SizedBox(height: 20),
                       SizedBox(
                         width: 400,
                         child: TextFormField(
+                          obscureText: true,
                           decoration: const InputDecoration(
-                              labelText: 'Pais de nacimiento',
-                              border: OutlineInputBorder()),
+                            labelText: 'Contraseña',
+                            border: OutlineInputBorder(),
+                            filled: true,
+                            fillColor: Color.fromARGB(255, 235, 227, 227),
+                          ),
                         ),
                       ),
+                      const SizedBox(height: 20),
                       ElevatedButton(
-                          onPressed: () {
-                            setState(() {});
-                          },
-                          child: const Text("Inciar Sesion"))
+                        style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(Colors.blue),
+                        ),
+                        onPressed: () {
+                          setState(() {});
+                        },
+                        child: const Text(
+                          "Iniciar Sesión",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),
