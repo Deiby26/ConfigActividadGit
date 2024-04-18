@@ -35,9 +35,25 @@ class _MainAppState extends State<MainApp> {
                 Container(
                   height: 150,
                   width: 150,
-                  child: Image(
+                  child: const Image(
                       image: NetworkImage(
                           'https://upload.wikimedia.org/wikipedia/commons/c/cd/Facebook_logo_%28square%29.png')),
+                ),
+                const Text(" "),
+                Form(
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        width: 400, 
+                        child: TextFormField(
+                          decoration: const InputDecoration(
+                            labelText: 'Ingrese su nombre',
+                            border: OutlineInputBorder(),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 )
               ],
             ),
