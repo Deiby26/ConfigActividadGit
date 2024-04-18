@@ -44,14 +44,37 @@ class _MainAppState extends State<MainApp> {
                   child: Column(
                     children: [
                       SizedBox(
-                        width: 400, 
+                        width: 400,
                         child: TextFormField(
                           decoration: const InputDecoration(
-                            labelText: 'Ingrese su nombre',
+                            labelText: 'Nombre',
                             border: OutlineInputBorder(),
                           ),
                         ),
                       ),
+                      const Text(""),
+                      SizedBox(
+                        width: 400,
+                        child: TextFormField(
+                          decoration: const InputDecoration(
+                              labelText: 'Correo Electronico',
+                              border: OutlineInputBorder()),
+                        ),
+                      ),
+                      const Text(""),
+                      SizedBox(
+                        width: 400,
+                        child: TextFormField(
+                          decoration: const InputDecoration(
+                              labelText: 'Pais de nacimiento',
+                              border: OutlineInputBorder()),
+                        ),
+                      ),
+                      ElevatedButton(
+                          onPressed: () {
+                            setState(() {});
+                          },
+                          child: const Text("Inciar Sesion"))
                     ],
                   ),
                 )
